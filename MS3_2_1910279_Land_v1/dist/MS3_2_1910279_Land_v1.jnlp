@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="MS3_2_1910279_Land_v1.jnlp">
+  <information>
+    <title>MS3_2_1910279_Land_v1</title>
+    <vendor>shiha</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="MS3_2_1910279_Land_v1.jar" size="15384" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="MS3_2_1910279_Land_v1" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="mainpkg.MainClass"  name="MS3_2_1910279_Land_v1" />
+  <update check="always"/>
+</jnlp>
