@@ -14,6 +14,6 @@
       <ComboBox fx:id="UserTypeComboBox" layoutX="225.0" layoutY="195.0" prefWidth="150.0" promptText="User type" />
       <Label layoutX="225.0" layoutY="323.0" text="Not a member?" />
       <Button layoutX="315.0" layoutY="319.0" onAction="#goToSignUpSceneButtonClick" text="Sign up" />
-      <Label fx:id="logInError" alignment="CENTER" layoutX="163.0" layoutY="287.0" prefHeight="17.0" prefWidth="274.0" />
+      <Label fx:id="logInError" alignment="CENTER" layoutX="163.0" layoutY="287.0" prefHeight="17.0" prefWidth="274.0" textFill="#f50000" />
     </children>
 </AnchorPane>

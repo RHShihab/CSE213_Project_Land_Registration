@@ -5,12 +5,11 @@
  */
 package mainpkg;
 
-import Users.User;
+import Users.Buyer;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 
 /**
@@ -18,11 +17,11 @@ import javafx.scene.control.Label;
  *
  * @author shiha
  */
-public class SellerHomeSceneController implements Initializable {
+public class BuyerHomeSceneController implements Initializable {
 
     @FXML
-    private Label welcomeMessage;
-
+    private Label WelcomeLabel;
+    private Buyer b;
     /**
      * Initializes the controller class.
      */
@@ -30,5 +29,11 @@ public class SellerHomeSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    void initData(Buyer buyer) {
+        this.b=buyer;
+        WelcomeLabel.setText("Welcome "+b.getFullName());
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

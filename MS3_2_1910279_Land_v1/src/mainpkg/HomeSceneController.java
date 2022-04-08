@@ -6,7 +6,6 @@
 package mainpkg;
 
 import Users.*;
-import static Users.User.login;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -22,6 +21,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import mainpkg.SellerScenes.DummySceneController;
 
 /**
  *
@@ -64,19 +64,30 @@ public class HomeSceneController implements Initializable {
             logInError.setText("User name and password didn't match");
         }
         else {
-            if(loggedInUser instanceof Seller){
+            if(loggedInUser instanceof Buyer){
                 logInError.setText("Hello Mr. " + loggedInUser.getFullName());
                 
-                Parent root = FXMLLoader.load(getClass().getResource("SellerHomeScene.fxml"));
-                Scene scene2 = new Scene(root);
-                   
-                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-                
-                window.setScene(scene2);
-                window.show();
+                FXMLLoader loader1 = new FXMLLoader();
+                loader1.setLocation(getClass().getResource("BuyerHomeScene.fxml"));
+                Parent homeScene1 = loader1.load();
+                Scene homepage1 = new Scene(homeScene1);
+                BuyerHomeSceneController controller1 = loader1.getController();
+                controller1.initData((Buyer)loggedInUser);
+                Stage window1 = (Stage)((Node)event.getSource()).getScene().getWindow();
+                window1.setScene(homepage1);
+                window1.show();
             }
-            else if(loggedInUser instanceof Buyer){
+            else if(loggedInUser instanceof Seller){
                 logInError.setText("Hello Mr. " + loggedInUser.getFullName());
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("SellerScenes/DummyScene.fxml"));
+                Parent homeScene = loader.load();
+                Scene sellerHomePage = new Scene(homeScene);
+                DummySceneController controller = loader.getController();
+                controller.initData((Seller)loggedInUser);
+                Stage window1 = (Stage)((Node)event.getSource()).getScene().getWindow();
+                window1.setScene(sellerHomePage);
+                window1.show();
             }
             else if(loggedInUser instanceof REA){
                 logInError.setText("Hello Mr. " + loggedInUser.getFullName());
