@@ -11,30 +11,34 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.SellerScenes.Seller_AddPropertySceneController">
    <children>
-      <TextField fx:id="propertyNameTextField" layoutX="128.0" layoutY="76.0" prefHeight="25.0" prefWidth="179.0" />
-      <Label layoutX="41.0" layoutY="80.0" text="Property name:" />
-      <Label layoutX="41.0" layoutY="150.0" text="Property Address:">
+      <Label layoutX="55.0" layoutY="51.0" text="Please fill up the form to create your property">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="streetTextField" layoutX="116.0" layoutY="178.0" prefHeight="25.0" prefWidth="130.0" />
-      <Label layoutX="41.0" layoutY="182.0" text="Street:" />
-      <TextField fx:id="areaTextField" layoutX="116.0" layoutY="210.0" prefHeight="25.0" prefWidth="130.0" />
-      <Label layoutX="41.0" layoutY="214.0" text="Area:" />
-      <TextField fx:id="districtTextField" layoutX="116.0" layoutY="243.0" prefHeight="25.0" prefWidth="130.0" />
-      <Label layoutX="41.0" layoutY="247.0" text="District:" />
-      <Label layoutX="41.0" layoutY="281.0" text="Division:" />
-      <ComboBox fx:id="divisionComboBox" layoutX="116.0" layoutY="277.0" prefHeight="25.0" prefWidth="130.0" promptText="Select" />
-      <Label layoutX="41.0" layoutY="113.0" text="Property type:" />
-      <ComboBox fx:id="propertyTypeComboBox" layoutX="128.0" layoutY="109.0" onAction="#propertyTypeComboBoxChanged" prefHeight="25.0" prefWidth="179.0" promptText="Select" />
-      <Label layoutX="41.0" layoutY="40.0" text="Please fill up the form to create your property">
+      <Label layoutX="55.0" layoutY="91.0" text="Property name:" />
+      <TextField fx:id="propertyNameTextField" layoutX="142.0" layoutY="87.0" prefHeight="25.0" prefWidth="179.0" />
+      <Label layoutX="55.0" layoutY="122.0" text="Price:" />
+      <TextField fx:id="propertyPriceTextField" layoutX="142.0" layoutY="118.0" prefHeight="25.0" prefWidth="179.0" />
+      <Label layoutX="55.0" layoutY="154.0" text="Property type:" />
+      <ComboBox fx:id="propertyTypeComboBox" layoutX="142.0" layoutY="150.0" onAction="#propertyTypeComboBoxChanged" prefHeight="25.0" prefWidth="179.0" promptText="Select" />
+      <Label layoutX="55.0" layoutY="193.0" text="Property Address:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="480.0" layoutY="316.0" mnemonicParsing="false" onAction="#createPropertyButtonClick" text="Create" />
-      <BorderPane fx:id="propertyTypeBorderPane" layoutX="300.0" layoutY="78.0" prefHeight="225.0" prefWidth="235.0" />
-      <Line endX="54.0" endY="92.0" layoutX="231.0" layoutY="204.0" startX="54.0" startY="-47.0" strokeWidth="0.5" />
+      <Label layoutX="55.0" layoutY="225.0" text="Street:" />
+      <TextField fx:id="streetTextField" layoutX="130.0" layoutY="221.0" prefHeight="25.0" prefWidth="130.0" />
+      <Label layoutX="55.0" layoutY="257.0" text="Area:" />
+      <TextField fx:id="areaTextField" layoutX="130.0" layoutY="253.0" prefHeight="25.0" prefWidth="130.0" />
+      <Label layoutX="55.0" layoutY="290.0" text="District:" />
+      <TextField fx:id="districtTextField" layoutX="130.0" layoutY="286.0" prefHeight="25.0" prefWidth="130.0" />
+      <Label layoutX="55.0" layoutY="324.0" text="Division:" />
+      <ComboBox fx:id="divisionComboBox" layoutX="130.0" layoutY="320.0" prefHeight="25.0" prefWidth="130.0" promptText="Select" />
+      <Button layoutX="502.0" layoutY="320.0" mnemonicParsing="false" onAction="#savePropertyButtonClick" text="Save" />
+      <BorderPane fx:id="propertyTypeBorderPane" layoutX="311.0" layoutY="111.0" pickOnBounds="false" prefHeight="225.0" prefWidth="235.0" />
+      <Line endX="54.0" endY="95.0" layoutX="245.0" layoutY="245.0" startX="54.0" startY="-47.0" strokeWidth="0.5" />
+      <Label fx:id="errorLabel" layoutX="58.0" layoutY="332.0" />
+      <Button layoutX="440.0" layoutY="320.0" mnemonicParsing="false" onAction="#discardPropertyButtonClick" text="Discard" />
    </children>
 </AnchorPane>

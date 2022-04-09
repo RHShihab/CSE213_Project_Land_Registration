@@ -24,8 +24,8 @@ public class EmptyPlot extends Property implements Serializable{
     
     @Override
     public String toString(){
-        return "Name: " + name + ", Owner ID: " + ownerId + ", Price: " + price
-                + "\nSize of plot: " + sizeOfPlot
-                + "\nAddress:\n" +address;
+        return "Property name: " + name + ", Owner ID: " + ownerId + ", Price: " + price
+                + "\nEmpty plot details: Size of plot: " + sizeOfPlot
+                + "\nAddress: " +address;
     }
 }

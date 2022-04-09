@@ -23,6 +23,10 @@ public abstract class Property implements Serializable{
         this.ownerId = ownerId;
         this.price = price;
     }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
     
     @Override
     public String toString(){

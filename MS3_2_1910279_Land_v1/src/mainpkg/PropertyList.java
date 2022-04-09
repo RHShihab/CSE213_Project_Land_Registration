@@ -5,7 +5,6 @@
  */
 package mainpkg;
 
-import Users.*;
 import Properties.*;
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,6 +21,36 @@ import java.util.logging.Logger;
  * @author shiha
  */
 public class PropertyList {
+    public static void createEmptyPlot(String name, String ownerId, int price, 
+            String street, String area, String district, String division,
+            int sizeOfPlot){
+        EmptyPlot tempProp = new EmptyPlot(name, ownerId, price, 
+                                           street, area, district, division,
+                                           sizeOfPlot);
+        addPropertyToList(tempProp);
+        System.out.println(tempProp);
+    }
+    
+    public static void createFlat(String name, String ownerId, int price, 
+            String street, String area, String district, String division,
+            int size){
+        Flat tempProp = new Flat(name, ownerId, price, 
+                                 street, area, district, division,
+                                 size);
+        addPropertyToList(tempProp);
+        System.out.println(tempProp);
+    }
+    
+    public static void createPlotWithBuilding(String name, String ownerId, int price, 
+            String street, String area, String district, String division, 
+            int noOfFloor, int areaPerFloor) {
+        
+        PlotWithBuilding tempProp = new PlotWithBuilding(name, ownerId, price, 
+                                    street, area, district, division, 
+                                    noOfFloor, areaPerFloor);
+        addPropertyToList(tempProp);
+        System.out.println(tempProp);
+    }
     
     public static void addPropertyToList(Property newProperty){
         File f = null;
@@ -75,7 +104,13 @@ public class PropertyList {
             try {
                 if(ois != null) ois.close();
             } catch (IOException ex) { }
-        }  
+        }
+        for (Property i: listOfProperty){
+//            if(i.getOwnerId().equals(seller.getUserName())){
+//                System.out.println(i);
+//                System.out.println("");
+//            }
+        }
         return listOfProperty;
     }
 }

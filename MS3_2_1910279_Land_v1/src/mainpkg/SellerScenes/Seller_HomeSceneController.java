@@ -5,9 +5,11 @@
  */
 package mainpkg.SellerScenes;
 
+import Properties.*;
 import Users.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import mainpkg.PropertyList;
 
 /**
  * FXML Controller class
@@ -58,8 +61,17 @@ public class Seller_HomeSceneController implements Initializable {
     }
 
     @FXML
-    private void viewOffersButtonClick(ActionEvent event) throws IOException {
-
+    private void listOfMyPropertiesButtonClick(ActionEvent event) {
+        ArrayList<Property> listOfProperty = 
+                PropertyList.GetListOfProperty();
+        
+        for (Property i: listOfProperty){
+            if(i.getOwnerId().equals(seller.getUserName())){
+                System.out.println(i);
+                System.out.println("");
+            }
+        }
+        System.out.println("List of Properties has been shown");
     }
     
 }

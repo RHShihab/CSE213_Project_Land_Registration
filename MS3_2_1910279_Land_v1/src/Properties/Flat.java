@@ -20,4 +20,11 @@ public class Flat extends Property implements Serializable{
         super(name, ownerId, price, street, area, district, division);
         this.size = size;
     }
+    
+    @Override
+    public String toString(){
+        return "Property name: " + name + ", Owner ID: " + ownerId + ", Price: " + price
+                + "\nFlat details: Size of flat: " + size
+                + "\nAddress: " +address;
+    }
 }

@@ -15,6 +15,6 @@ public class Address implements Serializable{
     @Override
     public String toString(){
         return "Street: " + street + ", Area: " + area + ", District: " + district
-                + "Division: " +division;
+                + ", Division: " +division;
     }
 }

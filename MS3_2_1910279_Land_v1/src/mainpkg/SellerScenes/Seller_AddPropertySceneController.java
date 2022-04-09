@@ -7,6 +7,7 @@ package mainpkg.SellerScenes;
 
 import Users.*;
 import java.io.IOException;
+import static java.lang.Integer.parseInt;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -17,10 +18,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import mainpkg.BuyerScenes.Buyer_HomeSceneController;
+import mainpkg.PropertyList;
 
 /**
  * FXML Controller class
@@ -40,6 +42,8 @@ public class Seller_AddPropertySceneController implements Initializable {
     @FXML    private ComboBox<String> divisionComboBox;
     @FXML    private BorderPane propertyTypeBorderPane;
     @FXML    private ComboBox<String> propertyTypeComboBox;
+    @FXML    private Label errorLabel;
+    @FXML    private TextField propertyPriceTextField;
     /**
      * Initializes the controller class.
      */
@@ -60,18 +64,49 @@ public class Seller_AddPropertySceneController implements Initializable {
     }
 
     @FXML
-    private void createPropertyButtonClick(ActionEvent event) throws IOException {
+    private void savePropertyButtonClick(ActionEvent event) throws IOException {
         if("Empty plot".equals(propertyTypeComboBox.getValue())){
-            System.out.println(a.getSizeOfPlotTextField());
+//            System.out.println(a.getSizeOfPlotTextField());
+            
+            PropertyList.createEmptyPlot(propertyNameTextField.getText(), 
+                    seller.getUserName(), 
+                    parseInt(propertyPriceTextField.getText()), 
+                    streetTextField.getText(), 
+                    areaTextField.getText(), 
+                    districtTextField.getText(), 
+                    divisionComboBox.getValue(),
+                    parseInt(a.getSizeOfPlotTextField()));
+            
             System.out.println("Empty plot has been created");
         }
         else if("Plot with Building".equals(propertyTypeComboBox.getValue())){
-            System.out.println(b.getNoOfFloorsTextField());
-            System.out.println(b.getAreaPerFloorTextField());
+//            System.out.println(b.getNoOfFloorsTextField());
+//            System.out.println(b.getAreaPerFloorTextField());
+            
+            PropertyList.createPlotWithBuilding(propertyNameTextField.getText(), 
+                    seller.getUserName(), 
+                    parseInt(propertyPriceTextField.getText()), 
+                    streetTextField.getText(), 
+                    areaTextField.getText(), 
+                    districtTextField.getText(), 
+                    divisionComboBox.getValue(), 
+                    parseInt(b.getNoOfFloorsTextField()),
+                    parseInt(b.getAreaPerFloorTextField()));
+            
             System.out.println("Plot with Building has been created");
         }
         else if("Flat".equals(propertyTypeComboBox.getValue())){
-            System.out.println(c.getAreaTextField());
+//            System.out.println(c.getAreaTextField());
+            
+            PropertyList.createFlat(propertyNameTextField.getText(), 
+                    seller.getUserName(), 
+                    parseInt(propertyPriceTextField.getText()), 
+                    streetTextField.getText(), 
+                    areaTextField.getText(), 
+                    districtTextField.getText(), 
+                    divisionComboBox.getValue(),
+                    parseInt(c.getAreaTextField()));
+            
             System.out.println("Flat has been created");
         }
         else{
@@ -105,6 +140,20 @@ public class Seller_AddPropertySceneController implements Initializable {
             c = loader.getController();
             propertyTypeBorderPane.setCenter(root);
         }
+    }
+
+    @FXML
+    private void discardPropertyButtonClick(ActionEvent event) throws IOException {
+        
+        FXMLLoader loader1 = new FXMLLoader();
+        loader1.setLocation(getClass().getResource("Seller_HomeScene.fxml"));
+        Parent root = loader1.load();
+        Scene scene = new Scene(root);
+        Seller_HomeSceneController controller1 = loader1.getController();
+        controller1.initData(seller);
+        Stage window1 = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window1.setScene(scene);
+        window1.show();
     }
     
 }

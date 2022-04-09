@@ -18,6 +18,6 @@
          </font>
       </Label>
       <Button layoutX="252.0" layoutY="125.0" mnemonicParsing="false" onAction="#addPropertyButtonClick" text="Add a property" />
-      <Button layoutX="263.0" layoutY="164.0" mnemonicParsing="false" onAction="#viewOffersButtonClick" text="View offers" />
+      <Button layoutX="238.0" layoutY="164.0" mnemonicParsing="false" onAction="#listOfMyPropertiesButtonClick" text="List of my properties" />
    </children>
 </AnchorPane>

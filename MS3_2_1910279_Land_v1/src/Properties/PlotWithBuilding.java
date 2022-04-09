@@ -25,8 +25,8 @@ public class PlotWithBuilding extends Property implements Serializable{
     @Override
     public String toString(){
         return "Name: " + name + ", Owner ID: " + ownerId + ", Price: " + price
-                + "\nNo of floors: " + noOfFloor + ", Area per Floor" + areaPerFloor
-                + "\nAddress:\n" +address;
+                + "\nPlot with building details: No of floors: " + noOfFloor + ", Area per Floor: " + areaPerFloor
+                + "\nAddress: " +address;
     }
     
 }

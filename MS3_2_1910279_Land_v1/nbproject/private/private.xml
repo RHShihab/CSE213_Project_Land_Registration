@@ -4,11 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/mainpkg/SellerScenes/Seller_AddPropertySceneController.java</file>
-            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/mainpkg/SignUpSceneController.java</file>
-            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/mainpkg/BuyerScenes/randomScene.fxml</file>
-            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/mainpkg/HomeSceneController.java</file>
-            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/mainpkg/BuyerScenes/Buyer_HomeSceneController.java</file>
-            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/mainpkg/BuyerScenes/RandomSceneController.java</file>
+            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/mainpkg/PropertyList.java</file>
+            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/mainpkg/SellerScenes/Seller_HomeSceneController.java</file>
+            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/Properties/PlotWithBuilding.java</file>
+            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/Properties/Flat.java</file>
+            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/Users/User.java</file>
+            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/Properties/Address.java</file>
+            <file>file:/I:/IUB/CSE213_oop/New_semester/Git/CSE213_Project_Land_Registration/MS3_2_1910279_Land_v1/src/Properties/EmptyPlot.java</file>
         </group>
     </open-files>
 </project-private>
