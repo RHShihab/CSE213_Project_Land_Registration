@@ -3,23 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mainpkg;
+package mainpkg.BuyerScenes;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
  *
  * @author shiha
  */
-public class Seller_HomeSceneController implements Initializable {
-
-    @FXML
-    private Label WelcomeLabel;
+public class RandomSceneController implements Initializable {
 
     /**
      * Initializes the controller class.

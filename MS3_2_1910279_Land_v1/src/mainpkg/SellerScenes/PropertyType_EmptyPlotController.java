@@ -8,32 +8,31 @@ package mainpkg.SellerScenes;
 import Users.Seller;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author shiha
  */
-public class DummySceneController implements Initializable {
+public class PropertyType_EmptyPlotController implements Initializable {
 
-    @FXML
-    private Label WelcomeLabel;
-    Seller seller;
+    @FXML    private TextField sizeOfPlotTextField;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
-    public void initData(Seller seller) {
-        this.seller = seller;
-        WelcomeLabel.setText(seller.getFullName());
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    public String getSizeOfPlotTextField() {
+        return sizeOfPlotTextField.getText();
+    }
+
     
 }

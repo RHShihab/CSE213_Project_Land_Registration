@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="225.0" prefWidth="235.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.SellerScenes.PropertyType_EmptyPlotController">
+   <children>
+      <Label layoutX="25.0" layoutY="82.0" text="Details of empty plot:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="sizeOfPlotTextField" layoutX="105.0" layoutY="110.0" prefHeight="25.0" prefWidth="100.0" />
+      <Label layoutX="25.0" layoutY="114.0" text="Size of plot" />
+   </children>
+</AnchorPane>

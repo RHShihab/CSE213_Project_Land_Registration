@@ -1,6 +1,12 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mainpkg;
 
 import Users.*;
+import Properties.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -11,29 +17,19 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class UserList {
+/**
+ *
+ * @author shiha
+ */
+public class PropertyList {
     
-    public static void signUp(String name, String userName, String password, String userType, String email){
-        if (userType == "Seller"){
-            Seller tempUser = new Seller(name, userName, password, email);
-            addUserToList(tempUser);
-        }
-        else if (userType == "Buyer"){
-            Buyer tempUser = new Buyer(name, userName, password, email);
-            addUserToList(tempUser);
-        }else if (userType == "Real Estate Agent"){
-            REA tempUser = new REA(name, userName, password, email);
-            addUserToList(tempUser);
-        }
-    }
-    
-    public static void addUserToList(User signedUpUser){
+    public static void addPropertyToList(Property newProperty){
         File f = null;
         FileOutputStream fos = null;      
         ObjectOutputStream oos = null;
         
         try {
-            f = new File("user.bin");
+            f = new File("property.bin");
             if(f.exists()){
                 fos = new FileOutputStream(f,true);
                 oos = new AppendableObjectOutputStream(fos);                
@@ -42,7 +38,7 @@ public class UserList {
                 fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);               
             }
-            oos.writeObject(signedUpUser);
+            oos.writeObject(newProperty);
 
         } catch (IOException ex) {
             Logger.getLogger(SignUpSceneController.class.getName()).log(Level.SEVERE, null, ex);
@@ -55,21 +51,21 @@ public class UserList {
         }                
     }
     
-    public static ArrayList<User> GetListOfUser(){
-        ArrayList<User> listOfUser = new ArrayList<>();
+    public static ArrayList<Property> GetListOfProperty(){
+        ArrayList<Property> listOfProperty = new ArrayList<>();
         File f = null;
         FileInputStream fis = null;      
         ObjectInputStream ois = null;
         
         try {
-            f = new File("user.bin");
+            f = new File("property.bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
-            User s;
+            Property p;
             try{
                 while(true){
-                    s = (User)ois.readObject();
-                    listOfUser.add(s);
+                    p = (Property)ois.readObject();
+                    listOfProperty.add(p);
                 }
             }//end of nested try
             catch(Exception e){
@@ -80,7 +76,6 @@ public class UserList {
                 if(ois != null) ois.close();
             } catch (IOException ex) { }
         }  
-        
-        return listOfUser;
+        return listOfProperty;
     }
 }

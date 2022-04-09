@@ -3,25 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mainpkg;
+package mainpkg.SellerScenes;
 
-import Users.Buyer;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author shiha
  */
-public class BuyerHomeSceneController implements Initializable {
+public class PropertyType_plotWithBuildingController implements Initializable {
 
-    @FXML
-    private Label WelcomeLabel;
-    private Buyer b;
+    @FXML    private TextField areaPerFloorTextField;
+    @FXML    private TextField noOfFloorsTextField;
+
     /**
      * Initializes the controller class.
      */
@@ -30,10 +29,13 @@ public class BuyerHomeSceneController implements Initializable {
         // TODO
     }    
 
-    void initData(Buyer buyer) {
-        this.b=buyer;
-        WelcomeLabel.setText("Welcome "+b.getFullName());
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getAreaPerFloorTextField() {
+        return areaPerFloorTextField.getText();
     }
+
+    public String getNoOfFloorsTextField() {
+        return noOfFloorsTextField.getText();
+    }
+    
     
 }

@@ -10,7 +10,9 @@ public class Seller extends User implements Serializable {
     
     @Override
     public String toString(){
-        return "Name: "+fullName + " User name: "+ userName+
-                " Password: "+ password + " Email: " + email;
+        return "User name: "+ userName+ 
+               ", Password: "+ password +
+               ", Name: "+fullName + 
+               ", Email: " + email;
     }
 }
