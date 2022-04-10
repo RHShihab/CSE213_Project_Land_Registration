@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.BuyerScenes.Buyer_ViewWishListController">
+   <children>
+      <Label alignment="CENTER" layoutX="156.0" layoutY="22.0" prefHeight="30.0" prefWidth="289.0" text="Let's find your dream property">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="77.0" text="Property type:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="plotWithBuildingCheckBox" layoutX="41.0" layoutY="103.0" mnemonicParsing="false" text="Plot with Building" />
+      <CheckBox fx:id="emptyPlotCheckBox" layoutX="41.0" layoutY="124.0" mnemonicParsing="false" text="Empty plot" />
+      <CheckBox fx:id="flatCheckBox" layoutX="41.0" layoutY="145.0" mnemonicParsing="false" text="Flat" />
+      <Button layoutX="438.0" layoutY="345.0" mnemonicParsing="false" onAction="#backButtonClick" text="Back" />
+      <Button layoutX="41.0" layoutY="345.0" mnemonicParsing="false" onAction="#searchPropertyButtonClick" text="Search" />
+      <Label layoutX="41.0" layoutY="177.0" text="Prefered division:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="divisionComboBox" layoutX="41.0" layoutY="202.0" prefHeight="25.0" prefWidth="130.0" />
+      <Label layoutX="41.0" layoutY="243.0" text="Price range:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="minPriceRangeTextField" alignment="CENTER" layoutX="40.0" layoutY="267.0" prefHeight="25.0" prefWidth="73.0" promptText="Min" />
+      <TextField fx:id="maxPriceRangeTextField" alignment="CENTER" layoutX="120.0" layoutY="267.0" prefHeight="25.0" prefWidth="73.0" promptText="Max" />
+      <Line endX="-30.0" endY="128.0" layoutX="237.0" layoutY="202.0" startX="-30.0" startY="-114.0" strokeWidth="0.5" />
+      <TableView fx:id="tableView" layoutX="224.0" layoutY="77.0" prefHeight="261.0" prefWidth="348.0">
+        <columns>
+          <TableColumn fx:id="propertyNameColumn" prefWidth="112.0" text="Property Name" />
+          <TableColumn fx:id="propertyPriceColumn" prefWidth="94.0" text="Property Price" />
+            <TableColumn fx:id="addressLineColumn" prefWidth="141.0" text="Address Line" />
+        </columns>
+      </TableView>
+      <Button layoutX="499.0" layoutY="345.0" mnemonicParsing="false" onAction="#seePropertyDetailsButtonClick" text="See details" />
+   </children>
+</AnchorPane>

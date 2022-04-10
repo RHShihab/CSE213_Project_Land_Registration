@@ -76,21 +76,18 @@ public class HomeSceneController implements Initializable {
             }
             else {
                 if(loggedInUser instanceof Buyer){
-                    logInError.setText("Hello Mr. " + loggedInUser.getFullName());
-
                     //opening new scene in the existing window with the user data
-                    FXMLLoader loader1 = new FXMLLoader();
-                    loader1.setLocation(getClass().getResource("BuyerScenes/Buyer_HomeScene.fxml"));
-                    Parent root = loader1.load();
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("BuyerScenes/Buyer_HomeScene.fxml"));
+                    Parent root = loader.load();
                     Scene buyerHomePage = new Scene(root);
-                    Buyer_HomeSceneController controller1 = loader1.getController();
+                    Buyer_HomeSceneController controller1 = loader.getController();
                     controller1.initData((Buyer)loggedInUser);
                     Stage window1 = (Stage)((Node)event.getSource()).getScene().getWindow();
                     window1.setScene(buyerHomePage);
                     window1.show();
                 }
                 else if(loggedInUser instanceof Seller){
-                    logInError.setText("Hello Mr. " + loggedInUser.getFullName());
                     FXMLLoader loader = new FXMLLoader();
                     loader.setLocation(getClass().getResource("SellerScenes/Seller_HomeScene.fxml"));
                     Parent homeScene = loader.load();

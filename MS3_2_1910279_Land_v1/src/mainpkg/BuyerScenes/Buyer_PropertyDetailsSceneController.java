@@ -5,6 +5,7 @@
  */
 package mainpkg.BuyerScenes;
 
+import Properties.Property;
 import Users.Buyer;
 import java.io.IOException;
 import java.net.URL;
@@ -17,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 /**
@@ -24,10 +26,11 @@ import javafx.stage.Stage;
  *
  * @author shiha
  */
-public class Buyer_HomeSceneController implements Initializable {
-
-    @FXML    private Label WelcomeLabel;
+public class Buyer_PropertyDetailsSceneController implements Initializable {
     Buyer buyer;
+    Property selectedProperty;
+    @FXML    private TextArea propertyDetailsTextArea;
+    @FXML    private Label landTitleTextField;
     /**
      * Initializes the controller class.
      */
@@ -36,20 +39,19 @@ public class Buyer_HomeSceneController implements Initializable {
         // TODO
     }    
 
-    public void initData(Buyer buyer) {
+    void initData(Buyer buyer, Property selectedProperty) {
         this.buyer = buyer;
-        WelcomeLabel.setText(buyer.getFullName());
+        this.selectedProperty = selectedProperty;
+        landTitleTextField.setText("Details of "+selectedProperty.getName() +":");
+        propertyDetailsTextArea.setText(selectedProperty.toString());
     }
 
     @FXML
-    private void logOutButtonClick(ActionEvent event) throws IOException {
-        //closes the app
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.close();
+    private void makeOfferButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void searchPropertyButtonClick(ActionEvent event) throws IOException {
+    private void backButonClick(ActionEvent event) throws IOException {
         FXMLLoader loader1 = new FXMLLoader();
         loader1.setLocation(getClass().getResource("Buyer_SearchProperty.fxml"));
         Parent root = loader1.load();
@@ -60,5 +62,6 @@ public class Buyer_HomeSceneController implements Initializable {
         window1.setScene(buyerHomePage);
         window1.show();
     }
+    
     
 }

@@ -105,12 +105,12 @@ public class PropertyList {
                 if(ois != null) ois.close();
             } catch (IOException ex) { }
         }
-        for (Property i: listOfProperty){
-//            if(i.getOwnerId().equals(seller.getUserName())){
+//        for (Property i: listOfProperty){
+////            if(i.getOwnerId().equals(seller.getUserName())){
 //                System.out.println(i);
 //                System.out.println("");
-//            }
-        }
+////            }
+//        }
         return listOfProperty;
     }
 }

@@ -126,6 +126,8 @@ public class Seller_AddPropertySceneController implements Initializable {
         }
         else if("Plot with Building".equals(propertyTypeComboBox.getValue())){
 //            Parent root = FXMLLoader.load(getClass().getResource("PropertyType_plotWithBuilding.fxml"));
+
+
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("PropertyType_plotWithBuilding.fxml"));
             Parent root = loader.load();

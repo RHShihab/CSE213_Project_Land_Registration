@@ -11,6 +11,22 @@ public class Address implements Serializable{
         this.district = district;
         this.division = division;
     }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public String getDivision() {
+        return division;
+    }
     
     @Override
     public String toString(){

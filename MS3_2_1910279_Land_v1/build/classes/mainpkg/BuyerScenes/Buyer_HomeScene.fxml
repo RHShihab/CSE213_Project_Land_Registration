@@ -12,11 +12,12 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="198.0" layoutY="23.0" prefHeight="17.0" prefWidth="204.0" text="Let's buy a property">
+      <Label alignment="CENTER" layoutX="198.0" layoutY="22.0" prefHeight="17.0" prefWidth="204.0" text="Let's buy a property">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="519.0" layoutY="26.0" mnemonicParsing="false" onAction="#logOutButtonClick" text="Log out" />
+      <Button layoutX="519.0" layoutY="24.0" mnemonicParsing="false" onAction="#logOutButtonClick" text="Log out" />
+      <Button layoutX="250.0" layoutY="111.0" mnemonicParsing="false" onAction="#searchPropertyButtonClick" text="Search Property" />
    </children>
 </AnchorPane>

@@ -15,6 +15,7 @@ public class MainClass extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setTitle("Land Registration");
         stage.show();
     }
 

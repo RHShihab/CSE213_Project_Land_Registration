@@ -21,6 +21,34 @@ public class PlotWithBuilding extends Property implements Serializable{
         this.noOfFloor = noOfFloor;
         this.areaPerFloor = areaPerFloor;
     }
+
+    public int getNoOfFloor() {
+        return noOfFloor;
+    }
+
+    public int getAreaPerFloor() {
+        return areaPerFloor;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
     
     @Override
     public String toString(){

@@ -17,11 +17,11 @@
          </font>
       </Label>
       <Label layoutX="55.0" layoutY="91.0" text="Property name:" />
-      <TextField fx:id="propertyNameTextField" layoutX="142.0" layoutY="87.0" prefHeight="25.0" prefWidth="179.0" />
+      <TextField fx:id="propertyNameTextField" layoutX="142.0" layoutY="87.0" prefHeight="25.0" prefWidth="153.0" />
       <Label layoutX="55.0" layoutY="122.0" text="Price:" />
-      <TextField fx:id="propertyPriceTextField" layoutX="142.0" layoutY="118.0" prefHeight="25.0" prefWidth="179.0" />
+      <TextField fx:id="propertyPriceTextField" layoutX="142.0" layoutY="118.0" prefHeight="25.0" prefWidth="153.0" />
       <Label layoutX="55.0" layoutY="154.0" text="Property type:" />
-      <ComboBox fx:id="propertyTypeComboBox" layoutX="142.0" layoutY="150.0" onAction="#propertyTypeComboBoxChanged" prefHeight="25.0" prefWidth="179.0" promptText="Select" />
+      <ComboBox fx:id="propertyTypeComboBox" layoutX="142.0" layoutY="150.0" onAction="#propertyTypeComboBoxChanged" prefHeight="25.0" prefWidth="153.0" promptText="Select" />
       <Label layoutX="55.0" layoutY="193.0" text="Property Address:">
          <font>
             <Font size="14.0" />
@@ -37,7 +37,7 @@
       <ComboBox fx:id="divisionComboBox" layoutX="130.0" layoutY="320.0" prefHeight="25.0" prefWidth="130.0" promptText="Select" />
       <Button layoutX="502.0" layoutY="320.0" mnemonicParsing="false" onAction="#savePropertyButtonClick" text="Save" />
       <BorderPane fx:id="propertyTypeBorderPane" layoutX="311.0" layoutY="111.0" pickOnBounds="false" prefHeight="225.0" prefWidth="235.0" />
-      <Line endX="54.0" endY="95.0" layoutX="245.0" layoutY="245.0" startX="54.0" startY="-47.0" strokeWidth="0.5" />
+      <Line endX="54.0" endY="95.0" layoutX="246.0" layoutY="250.0" startX="54.0" startY="-47.0" strokeWidth="0.5" />
       <Label fx:id="errorLabel" layoutX="58.0" layoutY="332.0" />
       <Button layoutX="440.0" layoutY="320.0" mnemonicParsing="false" onAction="#discardPropertyButtonClick" text="Discard" />
    </children>

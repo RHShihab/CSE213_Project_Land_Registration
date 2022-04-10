@@ -20,6 +20,30 @@ public class Flat extends Property implements Serializable{
         super(name, ownerId, price, street, area, district, division);
         this.size = size;
     }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public int getSize() {
+        return size;
+    }
     
     @Override
     public String toString(){

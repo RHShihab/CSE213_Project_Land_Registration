@@ -57,13 +57,13 @@ public abstract class User implements Serializable{
     public static User login(String userName, String password, String userType){
         ArrayList<User> userList = UserList.GetListOfUser();
         for(User i: userList){
-            if(i.userName.equals(userName) && i.password.equals(password) && i instanceof Seller){
+            if(i.userName.equals(userName) && i.password.equals(password) && i instanceof Seller && "Seller".equals(userType)){
                 return i;
             }
-            else if(i.userName.equals(userName) && i.password.equals(password) && i instanceof Buyer){
+            else if(i.userName.equals(userName) && i.password.equals(password) && i instanceof Buyer && "Buyer".equals(userType)){
                 return i;
             }
-            else if(i.userName.equals(userName) && i.password.equals(password) && i instanceof REA){
+            else if(i.userName.equals(userName) && i.password.equals(password) && i instanceof REA && "Real Estate Agent".equals(userType)){
                 return i;
             }
         }
