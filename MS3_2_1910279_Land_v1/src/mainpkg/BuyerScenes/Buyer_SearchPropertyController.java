@@ -69,29 +69,33 @@ public class Buyer_SearchPropertyController implements Initializable {
         
         int minPrice = (!"".equals(minPriceRangeTextField.getText()))?parseInt(minPriceRangeTextField.getText()):0;       
         int maxPrice = (!"".equals(maxPriceRangeTextField.getText()))?parseInt(maxPriceRangeTextField.getText()):2147483647;
-        
+        String division = (divisionComboBox.getValue() == null)?"":divisionComboBox.getValue();
 //        System.out.println("min: "+minPrice + "\tmax: "+maxPrice);
         boolean pb = plotWithBuildingCheckBox.isSelected(),
                 ep = emptyPlotCheckBox.isSelected(),
                 f = flatCheckBox.isSelected();
         
         for (Property i: listOfProperty){
-            if(minPrice<=i.getPrice() && maxPrice>=i.getPrice()){//skips property if outside of price range
+            if(minPrice<=i.getPrice() && maxPrice>=i.getPrice()){
+                //skips property if outside of price range
 
                 // 0 0 0 && 1 1 1
-                if((!pb && !ep && !f) || (pb && ep && f)){//show all type of properties
+                if( (!pb && !ep && !f) || (pb && ep && f) /*|| "".equals(division)*/ ){
+                    //show all type of properties
                     searchedProperty.add(i);
                 }
                 else {
-                    if((f)&&(i instanceof Flat)){
-                    searchedProperty.add(i);
-                    }
-                    if((ep)&&(i instanceof EmptyPlot)){
-                    searchedProperty.add(i);
-                    }
-                    if((pb)&&(i instanceof PlotWithBuilding)){
-                    searchedProperty.add(i);
-                    }
+//                    if(division.equals(i.getDivision())){
+                        if((f)&&(i instanceof Flat)){
+                        searchedProperty.add(i);
+                        }
+                        if((ep)&&(i instanceof EmptyPlot)){
+                        searchedProperty.add(i);
+                        }
+                        if((pb)&&(i instanceof PlotWithBuilding)){
+                        searchedProperty.add(i);
+                        }
+//                    }
                 }
             }
         }
@@ -101,9 +105,9 @@ public class Buyer_SearchPropertyController implements Initializable {
     @FXML
     private void searchPropertyButtonClick(ActionEvent event) {
         
-        if(divisionComboBox.getValue() == null){
-            divisionErrorTextLabel.setText("please select a division");
-        }else{
+//        if(divisionComboBox.getValue() == null){
+//            divisionErrorTextLabel.setText("please select a division");
+//        }else{
             //does not search for property if combo box is empty
             divisionErrorTextLabel.setText("");
             ObservableList<Property> searchedProperty = getProperty();
@@ -116,7 +120,7 @@ public class Buyer_SearchPropertyController implements Initializable {
 //                if(i instanceof EmptyPlot) System.out.println("EmptyPlot");
 //                if(i instanceof PlotWithBuilding) System.out.println("PlotWithBuilding");
 //            }System.out.println("\n\n");
-        }
+//        }
     }
 
 

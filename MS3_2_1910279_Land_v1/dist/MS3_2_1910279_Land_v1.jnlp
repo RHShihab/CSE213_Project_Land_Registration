@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="MS3_2_1910279_Land_v1.jar" size="42149" download="eager" />
+    <jar href="MS3_2_1910279_Land_v1.jar" size="42393" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="MS3_2_1910279_Land_v1" >
     <param name="requiredFXVersion" value="8.0+"/>

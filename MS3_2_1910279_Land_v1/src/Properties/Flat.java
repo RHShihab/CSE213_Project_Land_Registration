@@ -14,10 +14,10 @@ import java.io.Serializable;
 public class Flat extends Property implements Serializable{
     protected int size;
 
-    public Flat(String name, String ownerId, int price, 
+    public Flat(String name, String ownerId, String note, int price, 
             String street, String area, String district, String division,
             int size) {
-        super(name, ownerId, price, street, area, district, division);
+        super(name, ownerId, note, price, street, area, district, division);
         this.size = size;
     }
 
@@ -37,6 +37,10 @@ public class Flat extends Property implements Serializable{
         return price;
     }
 
+    public String getNote() {
+        return note;
+    }
+
     public Address getAddress() {
         return address;
     }
@@ -49,6 +53,7 @@ public class Flat extends Property implements Serializable{
     public String toString(){
         return "Property name: " + name + ", Owner ID: " + ownerId + ", Price: " + price
                 + "\nFlat details: Size of flat: " + size
-                + "\nAddress: " +address;
+                + "\nAddress: " +address
+                + "\nNote:\n" + note;
     }
 }

@@ -14,10 +14,10 @@ import java.io.Serializable;
 public class PlotWithBuilding extends Property implements Serializable{
     protected int noOfFloor, areaPerFloor;
     
-    public PlotWithBuilding(String name, String ownerId, int price, 
+    public PlotWithBuilding(String name, String ownerId, String note, int price, 
             String street, String area, String district, String division, 
             int noOfFloor, int areaPerFloor) {
-        super(name, ownerId, price, street, area, district, division);
+        super(name, ownerId, note, price, street, area, district, division);
         this.noOfFloor = noOfFloor;
         this.areaPerFloor = areaPerFloor;
     }
@@ -46,6 +46,10 @@ public class PlotWithBuilding extends Property implements Serializable{
         return address;
     }
 
+    public String getNote() {
+        return note;
+    }
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -54,7 +58,8 @@ public class PlotWithBuilding extends Property implements Serializable{
     public String toString(){
         return "Name: " + name + ", Owner ID: " + ownerId + ", Price: " + price
                 + "\nPlot with building details: No of floors: " + noOfFloor + ", Area per Floor: " + areaPerFloor
-                + "\nAddress: " +address;
+                + "\nAddress: " +address
+                + "\nNote:\n" + note;
     }
     
 }

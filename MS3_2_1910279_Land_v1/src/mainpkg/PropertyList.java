@@ -21,31 +21,31 @@ import java.util.logging.Logger;
  * @author shiha
  */
 public class PropertyList {
-    public static void createEmptyPlot(String name, String ownerId, int price, 
+    public static void createEmptyPlot(String name, String ownerId, String note, int price, 
             String street, String area, String district, String division,
             int sizeOfPlot){
-        EmptyPlot tempProp = new EmptyPlot(name, ownerId, price, 
+        EmptyPlot tempProp = new EmptyPlot(name, ownerId, note, price, 
                                            street, area, district, division,
                                            sizeOfPlot);
         addPropertyToList(tempProp);
         System.out.println(tempProp);
     }
     
-    public static void createFlat(String name, String ownerId, int price, 
+    public static void createFlat(String name, String ownerId, String note, int price, 
             String street, String area, String district, String division,
             int size){
-        Flat tempProp = new Flat(name, ownerId, price, 
+        Flat tempProp = new Flat(name, ownerId, note, price, 
                                  street, area, district, division,
                                  size);
         addPropertyToList(tempProp);
         System.out.println(tempProp);
     }
     
-    public static void createPlotWithBuilding(String name, String ownerId, int price, 
+    public static void createPlotWithBuilding(String name, String ownerId, String note, int price, 
             String street, String area, String district, String division, 
             int noOfFloor, int areaPerFloor) {
         
-        PlotWithBuilding tempProp = new PlotWithBuilding(name, ownerId, price, 
+        PlotWithBuilding tempProp = new PlotWithBuilding(name, ownerId, note, price, 
                                     street, area, district, division, 
                                     noOfFloor, areaPerFloor);
         addPropertyToList(tempProp);

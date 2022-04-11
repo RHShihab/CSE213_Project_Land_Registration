@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -44,6 +45,7 @@ public class Seller_AddPropertySceneController implements Initializable {
     @FXML    private ComboBox<String> propertyTypeComboBox;
     @FXML    private Label errorLabel;
     @FXML    private TextField propertyPriceTextField;
+    @FXML    private TextArea noteTextArea;
     /**
      * Initializes the controller class.
      */
@@ -65,53 +67,61 @@ public class Seller_AddPropertySceneController implements Initializable {
 
     @FXML
     private void savePropertyButtonClick(ActionEvent event) throws IOException {
-        if("Empty plot".equals(propertyTypeComboBox.getValue())){
-//            System.out.println(a.getSizeOfPlotTextField());
-            
-            PropertyList.createEmptyPlot(propertyNameTextField.getText(), 
-                    seller.getUserName(), 
-                    parseInt(propertyPriceTextField.getText()), 
-                    streetTextField.getText(), 
-                    areaTextField.getText(), 
-                    districtTextField.getText(), 
-                    divisionComboBox.getValue(),
-                    parseInt(a.getSizeOfPlotTextField()));
-            
-            System.out.println("Empty plot has been created");
-        }
-        else if("Plot with Building".equals(propertyTypeComboBox.getValue())){
-//            System.out.println(b.getNoOfFloorsTextField());
-//            System.out.println(b.getAreaPerFloorTextField());
-            
-            PropertyList.createPlotWithBuilding(propertyNameTextField.getText(), 
-                    seller.getUserName(), 
-                    parseInt(propertyPriceTextField.getText()), 
-                    streetTextField.getText(), 
-                    areaTextField.getText(), 
-                    districtTextField.getText(), 
-                    divisionComboBox.getValue(), 
-                    parseInt(b.getNoOfFloorsTextField()),
-                    parseInt(b.getAreaPerFloorTextField()));
-            
-            System.out.println("Plot with Building has been created");
-        }
-        else if("Flat".equals(propertyTypeComboBox.getValue())){
-//            System.out.println(c.getAreaTextField());
-            
-            PropertyList.createFlat(propertyNameTextField.getText(), 
-                    seller.getUserName(), 
-                    parseInt(propertyPriceTextField.getText()), 
-                    streetTextField.getText(), 
-                    areaTextField.getText(), 
-                    districtTextField.getText(), 
-                    divisionComboBox.getValue(),
-                    parseInt(c.getAreaTextField()));
-            
-            System.out.println("Flat has been created");
-        }
-        else{
-            
-        }
+//        if(true){
+////            adding validation to save property button
+//        }
+//        else{
+            if("Empty plot".equals(propertyTypeComboBox.getValue())){
+    //            System.out.println(a.getSizeOfPlotTextField());
+
+                PropertyList.createEmptyPlot(propertyNameTextField.getText(), 
+                        seller.getUserName(),
+                        noteTextArea.getText(),
+                        parseInt(propertyPriceTextField.getText()),
+                        streetTextField.getText(), 
+                        areaTextField.getText(), 
+                        districtTextField.getText(), 
+                        divisionComboBox.getValue(),
+                        parseInt(a.getSizeOfPlotTextField()));
+
+                System.out.println("Empty plot has been created");
+            }
+            else if("Plot with Building".equals(propertyTypeComboBox.getValue())){
+    //            System.out.println(b.getNoOfFloorsTextField());
+    //            System.out.println(b.getAreaPerFloorTextField());
+
+                PropertyList.createPlotWithBuilding(propertyNameTextField.getText(), 
+                        seller.getUserName(), 
+                        noteTextArea.getText(),
+                        parseInt(propertyPriceTextField.getText()), 
+                        streetTextField.getText(), 
+                        areaTextField.getText(), 
+                        districtTextField.getText(), 
+                        divisionComboBox.getValue(), 
+                        parseInt(b.getNoOfFloorsTextField()),
+                        parseInt(b.getAreaPerFloorTextField()));
+
+                System.out.println("Plot with Building has been created");
+            }
+            else if("Flat".equals(propertyTypeComboBox.getValue())){
+    //            System.out.println(c.getAreaTextField());
+
+                PropertyList.createFlat(propertyNameTextField.getText(), 
+                        seller.getUserName(), 
+                        noteTextArea.getText(),
+                        parseInt(propertyPriceTextField.getText()), 
+                        streetTextField.getText(), 
+                        areaTextField.getText(), 
+                        districtTextField.getText(), 
+                        divisionComboBox.getValue(),
+                        parseInt(c.getAreaTextField()));
+
+                System.out.println("Flat has been created");
+            }
+            else{
+
+            }
+//        }
     }
 
     @FXML
@@ -126,7 +136,6 @@ public class Seller_AddPropertySceneController implements Initializable {
         }
         else if("Plot with Building".equals(propertyTypeComboBox.getValue())){
 //            Parent root = FXMLLoader.load(getClass().getResource("PropertyType_plotWithBuilding.fxml"));
-
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("PropertyType_plotWithBuilding.fxml"));

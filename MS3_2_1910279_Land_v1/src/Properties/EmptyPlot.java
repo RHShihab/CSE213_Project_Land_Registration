@@ -35,14 +35,18 @@ public class EmptyPlot extends Property implements Serializable{
         return price;
     }
 
+    public String getNote() {
+        return note;
+    }
+
     public Address getAddress() {
         return address;
     }
 
-    public EmptyPlot(String name, String ownerId, int price, 
+    public EmptyPlot(String name, String ownerId, String note, int price, 
             String street, String area, String district, String division,
             int sizeOfPlot) {
-        super(name, ownerId, price, street, area, district, division);
+        super(name, ownerId, note, price, street, area, district, division);
         this.sizeOfPlot = sizeOfPlot;
     }
     
@@ -50,6 +54,7 @@ public class EmptyPlot extends Property implements Serializable{
     public String toString(){
         return "Property name: " + name + ", Owner ID: " + ownerId + ", Price: " + price
                 + "\nEmpty plot details: Size of plot: " + sizeOfPlot
-                + "\nAddress: " +address;
+                + "\nAddress: " +address
+                + "\nNote:\n" + note;
     }
 }
