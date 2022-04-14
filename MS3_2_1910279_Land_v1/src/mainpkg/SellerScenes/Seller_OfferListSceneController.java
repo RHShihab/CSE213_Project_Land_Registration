@@ -19,10 +19,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 
 /**
@@ -37,7 +42,7 @@ public class Seller_OfferListSceneController implements Initializable{
     @FXML    private TableView<OfferMessage> offerViewTable;
     @FXML    private TableColumn<OfferMessage, String> propertyNameColumn;
     @FXML    private TableColumn<OfferMessage, Integer> yourPrice;
-    @FXML    private TableColumn<OfferMessage, String> buyerPrice;
+    @FXML    private TableColumn<OfferMessage, Integer> buyerPrice;
     @FXML    private TableColumn<OfferMessage, String> Comments;
     
     /**
@@ -53,8 +58,8 @@ public class Seller_OfferListSceneController implements Initializable{
         this.seller = seller;
         
         propertyNameColumn.setCellValueFactory(new PropertyValueFactory<>("propertyName"));
-        yourPrice.setCellValueFactory(new PropertyValueFactory<>("propertyPrice"));
-        buyerPrice.setCellValueFactory(new PropertyValueFactory<>("prefPrice"));
+        yourPrice.setCellValueFactory(new PropertyValueFactory<>("askingPrice"));
+        buyerPrice.setCellValueFactory(new PropertyValueFactory<>("finalPrice"));
         Comments.setCellValueFactory(new PropertyValueFactory<>("noteToSeller"));
         
         ObservableList<OfferMessage> allOffers = OfferMessage.getListOfMessages();
@@ -123,7 +128,16 @@ public class Seller_OfferListSceneController implements Initializable{
     }
 
     @FXML
-    private void backButtonClick(ActionEvent event) {
+    private void backButtonClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Seller_HomeScene.fxml"));
+        Parent homeScene = loader.load();
+        Scene sellerHomePage = new Scene(homeScene);
+        Seller_HomeSceneController controller = loader.getController();
+        controller.initData(seller);
+        Stage window1 = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window1.setScene(sellerHomePage);
+        window1.show();
     }
     
 }

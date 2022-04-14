@@ -56,7 +56,7 @@ public class Buyer_SearchPropertyController implements Initializable {
                                            "Rangpur", "Sylhet");
         propertyNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         propertyPriceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        addressLineColumn.setCellValueFactory(new PropertyValueFactory<>("ownerId"));
+        addressLineColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
     }    
     
     public void initData(Buyer buyer) {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="mainpkg.MolOfficerScenes.MolOfficer_ListOfSoldPropertiesSceneController">
+   <children>
+      <Label layoutX="30.0" layoutY="39.0" text="List of properies sold:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="propertyListTextArea" layoutX="30.0" layoutY="61.0" prefHeight="270.0" prefWidth="538.0" />
+      <Button layoutX="527.0" layoutY="346.0" mnemonicParsing="false" onAction="#backButtonClick" text="Back" />
+   </children>
+</AnchorPane>

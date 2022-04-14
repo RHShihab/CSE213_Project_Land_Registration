@@ -20,5 +20,6 @@
       <Button layoutX="252.0" layoutY="125.0" mnemonicParsing="false" onAction="#addPropertyButtonClick" text="Add a property" />
       <Button layoutX="238.0" layoutY="164.0" mnemonicParsing="false" onAction="#listOfMyPropertiesButtonClick" text="List of my properties" />
       <Button layoutX="259.0" layoutY="202.0" mnemonicParsing="false" onAction="#listOfOffersButtonClick" text="List of offers" />
+      <Button layoutX="514.0" layoutY="25.0" mnemonicParsing="false" onAction="#logOutButtonClick" text="Log out" />
    </children>
 </AnchorPane>

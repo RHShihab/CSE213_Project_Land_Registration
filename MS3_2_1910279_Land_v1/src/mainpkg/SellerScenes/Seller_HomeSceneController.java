@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import mainpkg.MainClass;
 import mainpkg.PropertyList;
 
 /**
@@ -85,6 +86,15 @@ public class Seller_HomeSceneController implements Initializable {
         Stage window1 = (Stage)((Node)event.getSource()).getScene().getWindow();
         window1.setScene(scene);
         window1.show();
+    }
+
+    @FXML
+    private void logOutButtonClick(ActionEvent event) throws IOException {
+        Parent scene2Parent = FXMLLoader.load(MainClass.class.getResource("HomeScene.fxml"));
+        Scene scene2 = new Scene(scene2Parent);   
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(scene2);
+        window.show();
     }
     
 }

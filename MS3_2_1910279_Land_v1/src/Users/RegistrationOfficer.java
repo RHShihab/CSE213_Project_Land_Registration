@@ -1,6 +1,8 @@
 package Users;
 
-public class RegistrationOfficer extends User {
+import java.io.Serializable;
+
+public class RegistrationOfficer extends User  implements Serializable{
 
     public RegistrationOfficer(String name, String userName, String password, String email) {
         super(name, userName, password, email);

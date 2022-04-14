@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,41 +22,54 @@ import mainpkg.SignUpSceneController;
 public class OfferMessage implements Serializable{
     Property property;
     Buyer buyer;
-    String propertyName, prefPrice, noteToSeller;
-    int propertyPrice;
+    String noteToSeller;
+    
+    String sellerName, buyerName, propertyName;
+    int askingPrice, finalPrice;
+    
     boolean isAccepted = false;
     
     public OfferMessage(Property property, String prefPrice, String noteToSeller, Buyer buyer) {
         this.property = property;
-        this.prefPrice = prefPrice;
+        this.finalPrice = parseInt(prefPrice);
         this.noteToSeller = noteToSeller;
-        this.propertyPrice = property.getPrice();
+        this.askingPrice = property.getPrice();
         this.propertyName = property.getName();
         this.buyer = buyer;
-    }
-
-    public Buyer getBuyer() {
-        return buyer;
+        this.buyerName = buyer.getFullName();
+        this.sellerName = property.getOwnerId();
     }
 
     public Property getProperty() {
         return property;
     }
 
-    public String getPropertyName() {
-        return propertyName;
-    }
-
-    public String getPrefPrice() {
-        return prefPrice;
+    public Buyer getBuyer() {
+        return buyer;
     }
 
     public String getNoteToSeller() {
         return noteToSeller;
     }
 
-    public int getPropertyPrice() {
-        return propertyPrice;
+    public String getSellerName() {
+        return sellerName;
+    }
+
+    public String getBuyerName() {
+        return buyerName;
+    }
+
+    public String getPropertyName() {
+        return propertyName;
+    }
+
+    public int getAskingPrice() {
+        return askingPrice;
+    }
+
+    public int getFinalPrice() {
+        return finalPrice;
     }
 
     public boolean isIsAccepted() {

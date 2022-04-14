@@ -7,15 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="mainpkg.ROfficerScenes.ROfficer_TransferListSceneController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.ROfficerScenes.ROfficer_TransferListSceneController">
    <children>
       <Label alignment="CENTER" layoutX="159.0" layoutY="32.0" prefHeight="17.0" prefWidth="282.0" text="Requested Properties">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TableView fx:id="requestListColumn" layoutX="20.0" layoutY="80.0" prefHeight="200.0" prefWidth="560.0">
+      <TableView fx:id="requestListTable" layoutX="20.0" layoutY="80.0" prefHeight="200.0" prefWidth="560.0">
         <columns>
           <TableColumn fx:id="sellerNameColumn" prefWidth="104.0" text="Seller Name" />
             <TableColumn fx:id="askingPriceColumn" prefWidth="99.0" text="Asking Price" />

@@ -118,9 +118,7 @@ public class Seller_AddPropertySceneController implements Initializable {
 
                 System.out.println("Flat has been created");
             }
-            else{
-
-            }
+            errorLabel.setText("Property has been saved!!!");
 //        }
     }
 

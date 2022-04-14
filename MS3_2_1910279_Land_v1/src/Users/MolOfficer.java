@@ -1,6 +1,8 @@
 package Users;
 
-public class MolOfficer extends User {
+import java.io.Serializable;
+
+public class MolOfficer extends User  implements Serializable{
 
     public MolOfficer(String name, String userName, String password, String email) {
         super(name, userName, password, email);

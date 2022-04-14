@@ -3,11 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mainpkg.ROfficerScenes;
+package mainpkg.MolOfficerScenes;
 
+import Messages.OfferMessage;
+import Properties.Property;
 import Users.RegistrationOfficer;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,9 +31,8 @@ import mainpkg.MainClass;
  *
  * @author shiha
  */
-public class ROfficer_HomeSceneController implements Initializable {
-    RegistrationOfficer ROfficer;
-    
+public class MolOfficer_HomeSceneController implements Initializable {
+    RegistrationOfficer registrationOfficer;
     @FXML    private Label WelcomeLabel;
 
     /**
@@ -37,10 +42,9 @@ public class ROfficer_HomeSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
-    public void initData(RegistrationOfficer ROfficer) {
-        this.ROfficer = ROfficer;
-        WelcomeLabel.setText("Welcome " + ROfficer.getFullName());
+    public void initData(RegistrationOfficer registrationOfficer) {
+        this.registrationOfficer = registrationOfficer;
+        WelcomeLabel.setText("Welcome " + registrationOfficer.getFullName());
     }
 
     @FXML
@@ -54,14 +58,15 @@ public class ROfficer_HomeSceneController implements Initializable {
 
     @FXML
     private void transferRequestButtonClick(ActionEvent event) throws IOException {
+        
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("ROfficer_TransferListScene.fxml"));
+        loader.setLocation(getClass().getResource("MolOfficer_ListOfSoldPropertiesScene.fxml"));
         Parent homeScene = loader.load();
-        Scene rOfficerHomePage = new Scene(homeScene);
-        ROfficer_TransferListSceneController controller = loader.getController();
-        controller.initData(ROfficer);
+        Scene mOfficerHomePage = new Scene(homeScene);
+        MolOfficer_ListOfSoldPropertiesSceneController controller = loader.getController();
+        controller.initData(registrationOfficer);
         Stage window1 = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window1.setScene(rOfficerHomePage);
+        window1.setScene(mOfficerHomePage);
         window1.show();
     }
 
