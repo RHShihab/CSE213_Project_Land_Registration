@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.BuyerScenes.Buyer_MakeOfferSceneController">
+   <children>
+      <Label fx:id="propertyNameTextField" layoutX="40.0" layoutY="39.0" text="Making offer to:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="77.0" text="Preferred price:" />
+      <TextField fx:id="preferredPriceTextField" layoutX="128.0" layoutY="73.0" />
+      <TextArea fx:id="noteToBuyerTextArea" layoutX="40.0" layoutY="130.0" prefHeight="152.0" prefWidth="306.0" />
+      <Label layoutX="40.0" layoutY="105.0" text="Note to buyer:" />
+      <Button layoutX="501.0" layoutY="335.0" mnemonicParsing="false" onAction="#confirmOfferButtonClick" text="Confirm" />
+      <Button layoutX="427.0" layoutY="335.0" mnemonicParsing="false" onAction="#discardOfferButtonClick" text="Discard" />
+      <Label fx:id="messageErrorLabel" layoutX="40.0" layoutY="299.0" textFill="RED" />
+   </children>
+</AnchorPane>

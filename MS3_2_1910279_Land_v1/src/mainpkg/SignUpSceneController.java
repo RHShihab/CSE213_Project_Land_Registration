@@ -42,42 +42,13 @@ public class SignUpSceneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        signUpComboBox.getItems().addAll("Buyer","Seller","Real Estate Agent");
+        signUpComboBox.getItems().addAll("Buyer","Seller","Real Estate Agent","Registration Officer","Ministry of Land Officer");
     }    
 
     @FXML
     private void signUpButtonClick(ActionEvent event) {
         UserList.signUp(FullName.getText(), userName.getText(), password.getText()
-                , signUpComboBox.getValue().toString(), email.getText());
-/*
-        File f = null;
-        FileOutputStream fos = null;      
-        ObjectOutputStream oos = null;
-        
-        try {
-            f = new File("Seller.bin");
-            if(f.exists()){
-                fos = new FileOutputStream(f,true);
-                oos = new AppendableObjectOutputStream(fos);                
-            }
-            else{
-                fos = new FileOutputStream(f);
-                oos = new ObjectOutputStream(fos);               
-            }
-            Seller s = new Seller(
-                FullName.getText(), userName.getText(), password.getText()
-                , signUpComboBox.getValue().toString(), email.getText());
-            oos.writeObject(s);
-
-        } catch (IOException ex) {
-            Logger.getLogger(SignUpSceneController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                if(oos != null) oos.close();
-            } catch (IOException ex) {
-                Logger.getLogger(SignUpSceneController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }      */          
+                , signUpComboBox.getValue().toString(), email.getText());         
     }
 
     @FXML

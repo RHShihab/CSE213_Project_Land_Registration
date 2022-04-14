@@ -66,6 +66,12 @@ public abstract class User implements Serializable{
             else if(i.userName.equals(userName) && i.password.equals(password) && i instanceof REA && "Real Estate Agent".equals(userType)){
                 return i;
             }
+            else if(i.userName.equals(userName) && i.password.equals(password) && i instanceof RegistrationOfficer && "Registration Officer".equals(userType)){
+                return i;
+            }
+            else if(i.userName.equals(userName) && i.password.equals(password) && i instanceof MolOfficer && "Ministry of Land Officer".equals(userType)){
+                return i;
+            }
         }
         return null;
     }

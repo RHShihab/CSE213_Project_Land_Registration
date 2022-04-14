@@ -73,5 +73,18 @@ public class Seller_HomeSceneController implements Initializable {
         }
         System.out.println("List of Properties has been shown");
     }
+
+    @FXML
+    private void listOfOffersButtonClick(ActionEvent event) throws IOException {
+        FXMLLoader loader1 = new FXMLLoader();
+        loader1.setLocation(getClass().getResource("Seller_OfferListScene.fxml"));
+        Parent root = loader1.load();
+        Scene scene = new Scene(root);
+        Seller_OfferListSceneController controller1 = loader1.getController();
+        controller1.initData(seller);
+        Stage window1 = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window1.setScene(scene);
+        window1.show();
+    }
     
 }

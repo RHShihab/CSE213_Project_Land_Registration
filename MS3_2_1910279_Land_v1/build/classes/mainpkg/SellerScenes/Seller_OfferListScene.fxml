@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.SellerScenes.Seller_OfferListSceneController">
+   <children>
+      <Label alignment="CENTER" layoutX="146.0" layoutY="37.0" prefHeight="17.0" prefWidth="308.0" text="Offers made to">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="offerViewTable" layoutX="24.0" layoutY="100.0" prefHeight="200.0" prefWidth="557.0">
+        <columns>
+          <TableColumn fx:id="propertyNameColumn" prefWidth="117.0" text="Property Name" />
+          <TableColumn fx:id="yourPrice" prefWidth="90.0" text="Your Price" />
+            <TableColumn fx:id="buyerPrice" prefWidth="101.0" text="Buyer's Price" />
+            <TableColumn fx:id="Comments" prefWidth="248.0" text="Note from the Buyer" />
+        </columns>
+      </TableView>
+      <Button layoutX="472.0" layoutY="333.0" mnemonicParsing="false" onAction="#approveOfferButtonClick" text="Approve offer" />
+      <Button layoutX="413.0" layoutY="333.0" mnemonicParsing="false" onAction="#backButtonClick" text="Back" />
+   </children>
+</AnchorPane>

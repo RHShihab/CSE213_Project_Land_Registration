@@ -22,6 +22,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import mainpkg.ROfficerScenes.ROfficer_HomeSceneController;
 import mainpkg.SellerScenes.Seller_HomeSceneController;
 
 /**
@@ -99,6 +100,23 @@ public class HomeSceneController implements Initializable {
                     window1.show();
                 }
                 else if(loggedInUser instanceof REA){
+                    logInError.setText("Hello Mr. " + loggedInUser.getFullName());
+                }
+                else if(loggedInUser instanceof RegistrationOfficer){
+                    logInError.setText("Hello Mr. " + loggedInUser.getFullName());
+                    
+                    //mainpkg.ROfficerScenes.ROfficer_HomeSceneController
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("ROfficerScenes/ROfficer_HomeScene.fxml"));
+                    Parent homeScene = loader.load();
+                    Scene rOfficerHomePage = new Scene(homeScene);
+                    ROfficer_HomeSceneController controller = loader.getController();
+                    controller.initData((RegistrationOfficer)loggedInUser);
+                    Stage window1 = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    window1.setScene(rOfficerHomePage);
+                    window1.show();
+                }
+                else if(loggedInUser instanceof MolOfficer){
                     logInError.setText("Hello Mr. " + loggedInUser.getFullName());
                 }
             }

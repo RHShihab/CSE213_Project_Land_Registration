@@ -25,6 +25,14 @@ public class UserList {
             REA tempUser = new REA(name, userName, password, email);
             addUserToList(tempUser);
         }
+        else if (userType == "Registration Officer"){
+            RegistrationOfficer tempUser = new RegistrationOfficer(name, userName, password, email);
+            addUserToList(tempUser);
+        }
+        else if (userType == "Ministry of Land Officer"){
+            MolOfficer tempUser = new MolOfficer(name, userName, password, email);
+            addUserToList(tempUser);
+        }
     }
     
     public static void addUserToList(User signedUpUser){

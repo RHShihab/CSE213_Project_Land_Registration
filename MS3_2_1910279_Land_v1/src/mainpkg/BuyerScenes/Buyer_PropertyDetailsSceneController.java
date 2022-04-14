@@ -5,8 +5,8 @@
  */
 package mainpkg.BuyerScenes;
 
-import Properties.Property;
-import Users.Buyer;
+import Properties.*;
+import Users.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -47,7 +47,16 @@ public class Buyer_PropertyDetailsSceneController implements Initializable {
     }
 
     @FXML
-    private void makeOfferButtonClick(ActionEvent event) {
+    private void makeOfferButtonClick(ActionEvent event) throws IOException {
+        FXMLLoader loader1 = new FXMLLoader();
+        loader1.setLocation(getClass().getResource("Buyer_MakeOfferScene.fxml"));
+        Parent root = loader1.load();
+        Scene buyerHomePage = new Scene(root);
+        Buyer_MakeOfferSceneController controller1 = loader1.getController();
+        controller1.initData(buyer, selectedProperty);
+        Stage window1 = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window1.setScene(buyerHomePage);
+        window1.show();
     }
 
     @FXML
